@@ -1,0 +1,5 @@
+Para tener lo necesario para trabajar con el proyecto maven hacer:
+en la terminal usar el comando: mvn package
+
+para ejecutar el proyecto con la consola usar el comando:
+java -jar target/Proyecto_IntegradorM-1.0-SNAPSHOT.jar resultado.csv pronostico.csv
