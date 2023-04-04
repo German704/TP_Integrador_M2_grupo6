@@ -1,2 +1,4 @@
-id;equipo1;gana1;empate;gana2;equipo2
-1;argen;X;;;arabia
+participantes;equipo1;gana1;empate;gana2;equipo2
+Mariana;argen;X;;;arabia
+Pedro;argen1;;X;;arabia1
+Mariana;argen2;;;X;arabia2

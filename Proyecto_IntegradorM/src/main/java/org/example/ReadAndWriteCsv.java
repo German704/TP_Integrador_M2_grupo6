@@ -2,12 +2,10 @@ package org.example;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +16,8 @@ public class ReadAndWriteCsv {
     String filePronostico;
 
     List<Partido> lineasPartido;
-
+    Partido[] partidos = null;
+    public Ronda ronda = null;
     public ReadAndWriteCsv(String fileResultado, String filePronostico){
         this.fileResultado = fileResultado;
         this.filePronostico = filePronostico;
@@ -63,9 +62,16 @@ public class ReadAndWriteCsv {
             e.printStackTrace();
         }
         this.lineasPartido = partidoList;
+        partidos = new Partido[this.lineasPartido.size()];
+        if (!lineasPartido.isEmpty()){
+            for (int i = 0; i < this.lineasPartido.size(); i++){
+            this.partidos[i] = this.lineasPartido.get(i);
+          }
+            ronda = new Ronda("1", this.partidos);
+        }
     }
 
-    public List<Partido> getPartidos(){
+    public List<Partido> getLineasPartido(){
         return lineasPartido;
     }
     public ArrayList<Equipo> listaEquipos(){
@@ -91,7 +97,7 @@ public class ReadAndWriteCsv {
         return equipos;
     }
 
-    public void Pronostico() throws IOException, CsvValidationException {
+    /*public void pronostico() throws IOException, CsvValidationException {
         Pronostico pronostico = null;
         String[] lineasPronostico = null;
         try {
@@ -140,5 +146,5 @@ public class ReadAndWriteCsv {
         int puntos = pronostico.puntos();
         System.out.println("Puntos que gano " + pronostico.getNombre() + ": " + puntos);
 
-    }
+    }*/
 }

@@ -4,10 +4,6 @@ import com.opencsv.exceptions.CsvValidationException;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ReadAndWriteCsvTest {
 
@@ -21,13 +17,14 @@ class ReadAndWriteCsvTest {
         //for (Partido partido: listaPartidos) {
          //   System.out.println(partido.resultado("arabia"));
         //}
-        //System.out.println("los puntos de pronosticos____");
-        //readAndWriteCsv.Pronostico();
         System.out.println("----------------------------------------------\n"
                 + "id| Equipo1 | goles1 | goles2 | Equipo2\n" + "----------------------------------------------");
-        for (Partido partido : readAndWriteCsv.getPartidos()) {
+        for (Partido partido : readAndWriteCsv.getLineasPartido()) {
             System.out.println(partido.getId() + " | " + partido.getEquipo1() + " | " + partido.getGoles1() + " | " + partido.getGoles2() + " | " + partido.getEquipo2() );
         }
         System.out.println("----------------------------------------------");
+
+        System.out.println("los puntos de pronosticos____");
+        readAndWriteCsv.ronda.puntosPronostico(readAndWriteCsv.getLineasPartido(), "pronostico.csv");
     }
 }

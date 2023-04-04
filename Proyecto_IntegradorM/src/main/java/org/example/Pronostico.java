@@ -1,14 +1,14 @@
 package org.example;
 
 public class Pronostico {
-    private Integer id;
+    private Integer ronda;
     private String nombre;
     private Partido partido;
     private String equipo;
     private ResultadoEnum resultado;
 
-    public Pronostico(Integer id, String nombre, Partido partido, String equipo, ResultadoEnum resultado){
-        this.id = id;
+    public Pronostico(Integer ronda, String nombre, Partido partido, String equipo, ResultadoEnum resultado){
+        this.ronda = ronda;
         this.nombre = nombre;
         this.partido = partido;
         this.equipo = equipo;

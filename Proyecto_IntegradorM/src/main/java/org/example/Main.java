@@ -17,13 +17,13 @@ public class Main {
         System.out.println("----------------------------------------------\n"
                 + "id| Equipo1 | goles1 | goles2 | Equipo2\n"
                 + "----------------------------------------------");
-        for (Partido partido : readCsv.getPartidos()) {
+        for (Partido partido : readCsv.getLineasPartido()) {
             System.out.println(partido.getId() + " | " + partido.getEquipo1() + " | " + partido.getGoles1() + " | " + partido.getGoles2() + " | " + partido.getEquipo2());
         }
         System.out.println("----------------------------------------------");
 
 
         System.out.println("los puntos de pronosticos____");
-        readCsv.Pronostico();
+        readCsv.ronda.puntosPronostico(readCsv.getLineasPartido(), args[1]);
     }
 }
